@@ -13,7 +13,8 @@
 # 💻 Requirements
 To run this app you will need:
   - python3 --> (https://www.python.org/downloads/)
-  - sqlite3 -->(https://www.sqlite.org/download.html)
+  - sqlite3 --> (https://www.sqlite.org/download.html)
+  - firefox --> (https://www.mozilla.org/es-ES/firefox/new/)
   - A gotify server
   - Change the variables on lines 18 and 19
   - A .env file with a key to encrypt the password
