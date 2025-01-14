@@ -1,0 +1,6 @@
+requests
+sqlite3
+python-dotenv
+cryptography
+selenium
+beautifulsoup4
