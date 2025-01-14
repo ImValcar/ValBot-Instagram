@@ -1,6 +1,6 @@
 # ValBot-Instagram
 <div align="center">
-  ValBot, made by Valcar ;)
+  An Instagram bot to see who unfollows you.
 </div>
 
 # Index
