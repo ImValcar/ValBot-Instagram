@@ -4,11 +4,20 @@
 </div>
 
 # Index
-* ### [Explanation](#-explanation)
 * ### [Requirements](#-requirements)
+* ### [Explanation](#-explanation)
 * ### [Installation](#-installation)
 * ### [Usage](#-usage)
 * ### [License](#-license)
+
+# 💻 Requirements
+To run this app you will need:
+  - python3 --> (https://www.python.org/downloads/)
+  - sqlite3 -->(https://www.sqlite.org/download.html)
+  - A gotify server
+  - Change the variables on lines 18 and 19
+  - A .env file with a key to encrypt the password
+
 
 # 📖 Explanation
 ValBot is a tool built with Python and Selenium. It aims to store all the follower and following information from an Instagram profile in an SQLITE database.
@@ -28,13 +37,7 @@ I’ve included the empty SQLITE database file in the repository to make it easi
   CREATE TABLE UNFOLLOWS (SEGUIDOR TEXT, SEGUIDO TEXT, FECHA TIMESTAMP DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY (SEGUIDOR) REFERENCES CUENTAS(USERNAME),FOREIGN KEY (SEGUIDO) REFERENCES CUENTAS(USERNAME));
 ```
 
-# 💻 Requirements
-To run this app you will need:
-  - python3 --> (https://www.python.org/downloads/)
-  - sqlite3 -->(https://www.sqlite.org/download.html)
-  - A gotify server
-  - Change the variables on lines 18 and 19
-  - A .env file with a key to encrypt the password
+
 
 # 🚀 Installation
 To install ValBot follow these steps:
