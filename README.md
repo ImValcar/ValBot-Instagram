@@ -1,14 +1,32 @@
-# ValBot-Instagram
-ValBot, made by Valcar ;)
+<div align="center">
+  # ValBot-Instagram
+  ValBot, made by Valcar ;)
+</div>
 
 # Index
 * ### [Explanation](#-explanation)
 * ### [Requirements](#-requirements)
 * ### [Installation](#-installation)
 * ### [Usage](#-usage)
+* ### [License](#-license)
 
 # 📖 Explanation
+ValBot is a tool built with Python and Selenium. It aims to store all the follower and following information from an Instagram profile in an SQLITE database.
 
+It is designed to be used on a server (which must have the Gotify service running), where execution would be automated, and it would send a notification to your mobile via the Gotify app.
+
+However, it can also be used as a tool to run occasionally and check if there have been any changes to your Instagram account. You can see which profiles you follow but don't follow you back using a command option.
+
+Additionally, you can monitor the steps the program takes at any given moment if you have a graphical interface, by commenting on line 21 of the script.
+
+I’ve included the empty SQLITE database file in the repository to make it easier to use. However, if you prefer to do it yourself, here are the instructions you should run in the database:
+```
+  CREATE TABLE CUENTAS (USERNAME TEXT PRIMARY KEY CHECK (length(USERNAME) <= 30), PASSWORD TEXT);
+
+  CREATE TABLE IF NOT EXISTS FOLLOWS (SEGUIDOR TEXT NOT NULL,SEGUIDO TEXT NOT NULL,PRIMARY KEY (SEGUIDOR, SEGUIDO),FOREIGN KEY (SEGUIDOR) REFERENCES CUENTAS(USERNAME) ON DELETE CASCADE,FOREIGN KEY (SEGUIDO) REFERENCES CUENTAS (USERNAME)
+ 
+  CREATE TABLE UNFOLLOWS (SEGUIDOR TEXT, SEGUIDO TEXT, FECHA TIMESTAMP DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY (SEGUIDOR) REFERENCES CUENTAS(USERNAME),FOREIGN KEY (SEGUIDO) REFERENCES CUENTAS(USERNAME));
+```
 
 # 💻 Requirements
 To run this app you will need:
@@ -53,3 +71,22 @@ options:
 
 By Valcar :D
 ```
+# 📜 License
+```
+        DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
+                    Version 2, December 2004 
+
+ Copyright (C) 2004 Sam Hocevar <sam@hocevar.net> 
+
+ Everyone is permitted to copy and distribute verbatim or modified 
+ copies of this license document, and changing it is allowed as long 
+ as the name is changed. 
+
+            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE 
+   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION 
+
+  0. You just DO WHAT THE FUCK YOU WANT TO.
+```
+<a href="http://www.wtfpl.net/"><img
+       src="http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png"
+       width="80" height="15" alt="WTFPL" /></a>
